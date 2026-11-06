@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+
+@source '../../resources/views/**/*.blade.php';
+@source '../../resources/js/**/*.{ts,tsx,js,jsx}';
+
+@theme {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Lilita One', cursive, sans-serif;
+  --font-comic: 'Bangers', cursive, sans-serif;
+
+  --color-sponge-yellow: #FFE135;
+  --color-sponge-dark: #D4B200;
+  --color-ocean-blue: #1CA3DE;
+  --color-deep-ocean: #071E2F;
+  --color-mid-ocean: #0B3C5D;
+  --color-pants-brown: #8B5A2B;
+  --color-race-red: #E63946;
+  --color-race-green: #2EC4B6;
+}
+
+/* Checkered flag header & border pattern */
+.bg-checkered {
+  background-image: 
+    linear-gradient(45deg, #000 25%, transparent 25%), 
+    linear-gradient(-45deg, #000 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #000 75%), 
+    linear-gradient(-45deg, transparent 75%, #000 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-color: #ffffff;
+}
+
+.bg-checkered-sm {
+  background-image: 
+    linear-gradient(45deg, rgba(0,0,0,0.85) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(0,0,0,0.85) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.85) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.85) 75%);
+  background-size: 14px 14px;
+  background-position: 0 0, 0 7px, 7px -7px, -7px 0px;
+  background-color: #ffffff;
+}
+
+/* Ocean Bubbles Animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.6);
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.bubble {
+  position: absolute;
+  bottom: -40px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), rgba(28, 163, 222, 0.25) 70%, rgba(255, 255, 255, 0.3) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(28, 163, 222, 0.3);
+  animation: floatUp 14s infinite linear;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B3C5D;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFE135;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F4C430;
+}
+
+/* Print Styling */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

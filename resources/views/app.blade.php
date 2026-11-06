@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>🏁 Bikini Bottom Grand Prix — Pengundian Tim & Hadiah</title>
+    
+    <!-- Google Fonts: Lilita One, Bangers, Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lilita+One&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏁</text></svg>">
+    
+    @viteReactRefresh
+    @vite(['resources/css/app.css', 'resources/js/main.tsx'])
+</head>
+<body class="bg-[#071E2F] text-slate-100 min-h-screen font-sans antialiased overflow-x-hidden selection:bg-[#FFE135] selection:text-black">
+    <div id="root"></div>
+</body>
+</html>

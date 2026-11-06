@@ -1,0 +1,67 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "name": "bikinibottom-grandprix",
+    "version": "1.0.0",
+    "description": "Bikini Bottom Grand Prix — Pengundian Tim & Hadiah",
+    "author": "Spindraw",
+    "private": true,
+    "type": "module",
+    "main": "electron/main.cjs",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "build:electron": "vite build --config vite.config.electron.js",
+        "electron:start": "npm run build:electron && electron .",
+        "electron:dev": "electron electron/main.cjs --dev",
+        "electron:exe": "npm run build:electron && electron-builder --win portable",
+        "electron:installer": "npm run build:electron && electron-builder --win nsis"
+    },
+    "build": {
+        "appId": "com.spindraw.bikinibottom",
+        "productName": "BikiniBottomGrandPrix",
+        "directories": {
+            "output": "dist-electron"
+        },
+        "files": [
+            "dist/**/*",
+            "electron/**/*"
+        ],
+        "win": {
+            "target": [
+                "portable",
+                "nsis"
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        }
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "@types/canvas-confetti": "^1.9.0",
+        "@types/react": "^19.3.0",
+        "@types/react-dom": "^19.3.0",
+        "@vitejs/plugin-react": "^6.1.2",
+        "concurrently": "^10.0.3",
+        "electron": "^45.2.3",
+        "electron-builder": "^26.18.0",
+        "laravel-vite-plugin": "^3.1",
+        "tailwindcss": "^4.0.0",
+        "typescript": "^7.0.2",
+        "vite": "^8.0.0"
+    },
+    "optionalDependencies": {
+        "@laravel/multiplex": "^0.4.1"
+    },
+    "dependencies": {
+        "canvas-confetti": "^1.9.4",
+        "framer-motion": "^14.6.0",
+        "html-to-image": "^1.11.13",
+        "lucide-react": "^1.62.0",
+        "react": "^19.3.1",
+        "react-dom": "^19.3.1",
+        "react-router-dom": "^7.18.4",
+        "zustand": "^5.0.16"
+    }
+}
